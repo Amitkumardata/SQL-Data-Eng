@@ -56,7 +56,16 @@ Return high-value customers sorted by revenue.
   
 Explain in comments what each CTE does.
 
+Remember Forever:
+Subquery = a query inside another query
+CTE = a named temporary result inside one query
 
+Use subqueries for small checks.
+Use CTEs for multi-step business logic.
+
+Production SQL should be readable, testable, and explainable.
+  
+  
 Self-Test
 Before calling this topic complete, answer these without looking:
 What is a subquery?
