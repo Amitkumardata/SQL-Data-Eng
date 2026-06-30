@@ -1,0 +1,41 @@
+-- Schema Schema Design and Performance
+
+--Day: 1
+--OLTP: system for transaction manager the cx order, product, order_item , payment , 
+--Refund keep the track and update every customer data and info in online follow normalization
+--OLAP: system for analytics calculate agg, insight, kpi, follow start schema, Denormalization , make the busienss report 
+
+-- Day 2:
+--Denormilization: understand the star schema by fact_table(measrable number) dim_table(descriptive name) 
+-- why analytics system duplicates data intentionally
+--Raw data> clean table>star schema> reports z\
+  CONSTRAINT fk_sales_product
+        FOREIGN KEY (product_key)
+        REFERENCES dim_product(product_key),
+
+## Start schema 
+Fact = what happened
+Dimension = who, what, when, where
+
+Raw OLTP Data -> Dimension Tables + Fact Table -> Analytics Queries
+follow the star schema to analyse the data by product by revenue, high_value csutomer,high revenue
+by stores 
+
+create table fact_sales (
+order_id,
+price,
+stock_quantity,
+order_date
+)
+
+Dim_table
+dim_customers
+dim_products
+dim_payment
+dim_stores
+dim_date
+
+--Day 3:
+--Partition : split the large data smaller part so queries can run faster
+--partition mostly apply on date column to get the speciific date queries
+--Show me events from January 20226
