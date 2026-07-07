@@ -2,4 +2,46 @@ production-retail-analytics-db
 
 Day 10 Week 2 portfolio project.
 
-select 
+## Problem Statement:
+A retail company needs a reliable postgrsql database for string orders and an analaytics
+model for reporting on sales performence
+
+## Objective:
+Design a production style database with constraints , sample data, an analytics star schema 
+, and business reportings queries
+
+## Tech stack
+Postgresql
+SQL
+Data modeling
+star schema design
+
+# The OLTP Design
+The OLTP schema stores operationals data such as customers , products, orders, order items , store , payment
+
+## The OLAP Design
+The OLAP schema uses a star schema with fact_sales at the centee and dimension tables for customers
+products, stores and dates
+
+# Data quality rules
+Customers must have unique emails
+product prices cannot be negative
+qunatities must be greater than zero
+orders must use valid statuses
+payment must belong to valid orders
+
+## Business questions answered
+
+what is monthly revenue?
+which product categories generates the most revnue?
+who are the top customers?
+which stores perform best?
+which products sell the most?
+which products sell the most?
+
+## what i Learned
+how OLTP and OLAP  schema differ
+how constraints protect data quality
+how star schema support analytics
+how sql answers business questions
+How to document a database project for a portfolio
